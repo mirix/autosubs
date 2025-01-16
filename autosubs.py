@@ -33,8 +33,9 @@ language = 'Romanian'
 base_name = audio_file.split('.')[0]
 sub_name = base_name + '_en.srt'
 
-model = stable_whisper.load_model('large-v3-turbo')
-result = model.transcribe(audio_file, language=language, regroup='sp=.* /。/?/？/．/!/！', vad=True, vad_threshold=0.35, denoiser="demucs")
+model = stable_whisper.load_model('large-v3')
+result = model.transcribe(audio_file, language=language, regroup='sp=.* /。/?/？/．/!/！')
+#, vad=True, vad_threshold=0.35, denoiser="demucs")
 
 results = result.to_dict()['segments']
 
