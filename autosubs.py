@@ -18,7 +18,7 @@ audio_file = 'vlad.aac'
 src_lang = "ron_Latn"
 tgt_lang = "eng_Latn"
 
-token = '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'
+token = 'YOUR_HUGGING_FACE_TOKEN_HERE'
 model_id = "facebook/nllb-200-3.3B"
 
 
