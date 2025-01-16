@@ -1,4 +1,5 @@
 import os
+import gc
 import pandas as pd
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
@@ -17,7 +18,7 @@ audio_file = 'vlad.aac'
 src_lang = "ron_Latn"
 tgt_lang = "eng_Latn"
 
-token = 'YOUR_HUGGING_FACE_TOKEN_HERE'
+token = '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'
 model_id = "facebook/nllb-200-3.3B"
 
 
@@ -35,7 +36,7 @@ sub_name = base_name + '_en.srt'
 
 model = stable_whisper.load_model('large-v3')
 result = model.transcribe(audio_file, language=language, regroup='sp=.* /。/?/？/．/!/！')
-#, vad=True, vad_threshold=0.35, denoiser="demucs")
+#vad=True, vad_threshold=0.35, denoiser="demucs"
 
 results = result.to_dict()['segments']
 
@@ -100,6 +101,9 @@ for i, word in enumerate(full_text.split()):
                     chunk_list.append((word0, start0, end0))
 
 df = pd.DataFrame(chunk_list, columns = ['Text', 'Start', 'End'])
+
+del model
+gc.collect()
 
 ### TRANSLATION ###
 # txt2txt
