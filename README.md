@@ -11,3 +11,5 @@ Transcribes audio in any language supported by Whisper (ca. 100 in total of whic
 Translates the subtitles to any language supported by No Language Left Behind (NLLB); ca. 200 languages.
 
 The speed in a RTX 3090 is about 5 minutes per hour of audio.
+
+Additional script specifically to Luxembourgish audio -> English subtitles. 
