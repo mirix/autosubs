@@ -12,4 +12,7 @@ Translates the subtitles to any language supported by No Language Left Behind (N
 
 The speed in a RTX 3090 is about 5 minutes per hour of audio.
 
-Additional script specifically to Luxembourgish audio -> English subtitles. 
+Additional script specifically to Luxembourgish audio -> English subtitles. There are two versions:
+
+1. Sentence-wise, less memory, lower quality.
+2. Translation of the full text in one go.
