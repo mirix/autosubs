@@ -113,7 +113,7 @@ print("Step 1: Starting speech-to-text transcription...")
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
-model_id_asr = "bond005/whisper-large-v3-ru-podlodka"
+model_id_asr = "openai/whisper-large-v3"
 
 model_asr = WhisperForConditionalGeneration.from_pretrained(
     model_id_asr,
@@ -136,6 +136,7 @@ pipe_asr = pipeline(
     return_timestamps="word",
 )
 
+'''
 generate_kwargs = {
     "max_new_tokens": 256,  # Increased for longer musical phrases
     #"num_beams": 1,
@@ -144,6 +145,19 @@ generate_kwargs = {
     #"temperature": (0.0, 0.2, 0.4, 0.6, 0.8, 1.0),
     #"logprob_threshold": -1.2,  # Lower threshold to capture more uncertain speech
     #"no_speech_threshold": 0.3,  # Much lower threshold to not miss speech in music
+    "language": "russian",
+}
+'''
+
+generate_kwargs = {
+    "max_new_tokens": 445,
+    "num_beams": 1,
+    "condition_on_prev_tokens": False,
+    "compression_ratio_threshold": 1.35,  # zlib compression ratio threshold (in token space)
+    "temperature": (0.0, 0.2, 0.4, 0.6, 0.8, 1.0),
+    "logprob_threshold": -1.0,
+    "no_speech_threshold": 0.6,
+    "return_timestamps": True,
     "language": "russian",
 }
 
