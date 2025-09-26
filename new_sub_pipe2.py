@@ -24,7 +24,8 @@ separator = Separator(output_single_stem='vocals')
 separator.load_model(model_filename='model_bs_roformer_ep_317_sdr_12.9755.ckpt')
 output_names = {'Vocals': 'isolated_vocals'}
 vocal_audio = separator.separate(input_audio, output_names)
-sample, sr = librosa.load(vocal_audio[0], sr=16000)
+#sample, sr = librosa.load(vocal_audio[0], sr=16000)
+sample, sr = librosa.load(input_audio, sr=16000)
 
 # Clean up the first model
 del separator
