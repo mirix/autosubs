@@ -1,0 +1,4 @@
+ffmpeg -i Ekaterina.webm -filter_complex \
+"subtitles=Ekaterina_rus.srt:force_style='Fontname=Noto Sans,Fontsize=24,Bold=1,PrimaryColour=&H00FFFFFF,Alignment=2,MarginV=70'[v1]; \
+ [v1]subtitles=Ekaterina_eng.srt:force_style='Fontname=Noto Sans,Fontsize=18,PrimaryColour=&H00CCCCCC,Alignment=2,MarginV=20'" \
+-c:a copy Ekaterina.mp4
