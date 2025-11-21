@@ -11,6 +11,7 @@ from transformers import AutoModel
 import stable_whisper
 from sentence_transformers import SentenceTransformer, util
 
+
 ###############################################################
 ###                        VARIABLES                        ###
 ###############################################################
@@ -348,7 +349,7 @@ def translate_with_chimera(df_rus):
 
     raw_translations = []
     attempt = 0
-    while len(raw_translations) < 4 and attempt < 10:
+    while len(raw_translations) < 6 and attempt < 18:
         attempt += 1
         prompt = (f"Translate the following Russian song lyrics to English. "
                   f"Match the original verse by verse.\n\n{full_russian_text}\n\nEnglish translation:")
