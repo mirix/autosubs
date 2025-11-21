@@ -11,8 +11,6 @@ from transformers import AutoModel
 import stable_whisper
 from sentence_transformers import SentenceTransformer, util
 
-os.environ["HF_TOKEN"] = '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'
-
 ###############################################################
 ###                        VARIABLES                        ###
 ###############################################################
