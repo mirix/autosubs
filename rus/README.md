@@ -22,7 +22,7 @@ USAGE
 
 You can run the main script as:
 
-python rus_subs_gigaam_auto.py <Project Name> <Youtube ID or "URL"> <0, 1 or Nothing>
+python rus_subs_gigaam_auto.py <Project_Name> <Youtube ID or "URL"> <0, 1 or Nothing>
 
 The third argument is optional:
 
