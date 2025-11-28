@@ -1,4 +1,4 @@
-I have migrated the automated Russian subtitling and translation system entirely from Parakeet to GigaAM.
+I have migrated the automated Russian subtitling and translation system entirely from Parakeet (multilingual) to GigaAM (Russian only).
 
 I am using the following fork:
 
